@@ -41,6 +41,7 @@ dependencies:
   intl_phone_field: ^3.0.1
   email_validator:
   fluttertoast:
+  flutter_svg: ^1.1.1+1
 
 dev_dependencies:
   flutter_test:
