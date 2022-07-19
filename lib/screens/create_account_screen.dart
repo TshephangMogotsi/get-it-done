@@ -65,7 +65,7 @@ class _CreateAccountState extends State<CreateAccount> {
                 ReusableTextFormField(
                   label: 'Cell Phone',
                   hint: 'Enter Your Mobile number',
-                  type: TextInputType.name,
+                  type: TextInputType.phone,
                 ),
               ],
             ),

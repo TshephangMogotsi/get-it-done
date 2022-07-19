@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "480021861058",
+    "project_id": "get-it-done-b0377",
+    "storage_bucket": "get-it-done-b0377.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480021861058:android:b4ea639e54953b7238a15b",
+        "android_client_info": {
+          "package_name": "com.diginav.get_it_done"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480021861058-eg67tj93mic3dk119cd7jf66qt3tm8r4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.diginav.get_it_done",
+            "certificate_hash": "0125015a36a630af27e20939f688298736c10896"
+          }
+        },
+        {
+          "client_id": "480021861058-ttrqovum23cqqii89b81ab9c1glrfnpd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJZBPExQthmf1pYQt_ReCXfGfL09w-yso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480021861058-ttrqovum23cqqii89b81ab9c1glrfnpd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.example.get_it_done
+package com.diginav.get_it_done
 
 import io.flutter.embedding.android.FlutterActivity
 
