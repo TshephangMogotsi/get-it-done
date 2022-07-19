@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_it_done/Components/reusable_button.dart';
 import 'package:get_it_done/screens/create_account_screen.dart';
 import 'package:get_it_done/screens/login.dart';
+import '../Components/resusable_icon_button.dart';
 import 'more_options_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -94,10 +96,11 @@ class WelcomeScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      ReusableElevatedButton(
+                      ReusableIconButton(
                         buttonColor: const Color(0xFF2B5865),
                         label: 'Continue with Google',
                         onPressed: () {},
+                        icon: FontAwesomeIcons.google,
                       ),
                       const SizedBox(
                         height: 15,
