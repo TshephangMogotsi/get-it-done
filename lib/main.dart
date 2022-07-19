@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get_it_done/screens/welcome_screen.dart';
 
+import 'constants.dart';
+
 void main() => runApp(const GetItDone());
 
 class GetItDone extends StatelessWidget {
@@ -9,8 +11,8 @@ class GetItDone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.dark().copyWith(
-        primaryColor: const Color.fromARGB(255, 0, 0, 0),
+      theme: ThemeData(
+        primaryColor: KprimaryButtonColor,
         scaffoldBackgroundColor: const Color(0xFFFFFFFF),
       ),
       home: const WelcomeScreen(),

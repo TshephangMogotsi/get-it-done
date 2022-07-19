@@ -32,7 +32,7 @@ class ReusableIconButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Expanded(flex: 1, child: Icon(icon)),
+            Expanded(flex: 1, child: Icon(icon,color: Colors.white,)),
             const VerticalDivider(
               thickness: 2.0,
               color: Colors.white,

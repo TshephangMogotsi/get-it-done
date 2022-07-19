@@ -1,55 +1,66 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:get_it_done/screens/account_screens/page_1.dart';
-import 'package:get_it_done/screens/account_screens/page_2.dart';
-import 'package:get_it_done/screens/account_screens/page_3.dart';
-import 'package:get_it_done/screens/account_screens/page_4.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+import '../constants.dart';
 
-class CreateAccount extends StatelessWidget {
-  final _controller = PageController();
+class CreateAccount extends StatefulWidget {
+  const CreateAccount({Key? key}) : super(key: key);
 
-  CreateAccount({Key? key}) : super(key: key);
+  @override
+  State<CreateAccount> createState() => _CreateAccountState();
+}
+
+class _CreateAccountState extends State<CreateAccount> {
+  int currentStep = 0;
+
+  List<Step> stepList() => [
+        Step(
+          title: Text(
+            'Account',
+            style: kTestTextStyle,
+          ),
+          content: Center(
+            child: Text('data'),
+          ),
+          isActive: currentStep >= 0,
+        ),
+        Step(
+          title: Text(
+            'Address',
+            style: kTestTextStyle,
+          ),
+          content: Center(
+            child: Text('data'),
+          ),
+          isActive: currentStep >= 1,
+        ),
+        Step(
+          title: Text(
+            'Confirm',
+            style: kTestTextStyle,
+          ),
+          content: Center(
+            child: Text('data'),
+          ),
+          isActive: currentStep >= 2,
+        ),
+      ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            // page view
-            SizedBox(
-              height: 600,
-              child: PageView(
-                controller: _controller,
-                children: const [
-                  Page1(),
-                  Page2(),
-                  Page3(),
-                  Page4(),
-                ],
-              ),
-            ),
-      
-            // dot indicators
-            SmoothPageIndicator(
-              controller: _controller,
-              count: 4,
-              effect: JumpingDotEffect(
-                activeDotColor: const Color(0xFFFFA600),
-                dotColor: Color.fromARGB(255, 133, 133, 133),
-                dotHeight: 10,
-                dotWidth: 10,
-                spacing: 16,
-                //verticalOffset: 50,
-                jumpScale: 3,
-              ),
-            ),
-          ],
+      body: Center(
+        child: Stepper(
+          // type: StepperType.horizontal,
+          currentStep: currentStep,
+          onStepTapped: (index) {
+            setState(() {
+              currentStep = index;
+            });
+          },
+
+          steps: stepList(),
         ),
       ),
     );
