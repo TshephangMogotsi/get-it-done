@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_it_done/Components/reusable_button.dart';
 import 'package:get_it_done/screens/create_account_screen.dart';
 import 'package:get_it_done/screens/login.dart';
+import '../Components/background_circles.dart';
 import '../Components/resusable_icon_button.dart';
 import 'more_options_screen.dart';
 
@@ -16,20 +17,8 @@ class WelcomeScreen extends StatelessWidget {
       child: Scaffold(
         body: Stack(
           children: [
-            Positioned(
-              right: 200,
-              bottom: -210,
-              child: SvgPicture.asset(
-                'assets/Circle.svg',
-              ),
-            ),
-            Positioned(
-              left: 160,
-              top: -170,
-              child: SvgPicture.asset(
-                'assets/Circle.svg',
-              ),
-            ),
+            const TopBackgroundCircle(),
+            const BottomBackgroundCircle(),
             Padding(
               padding:
                   const EdgeInsets.only(left: 30, bottom: 30.0, right: 30.0),
