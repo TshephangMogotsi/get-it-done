@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_it_done/Components/reusable_button.dart';
+
+import '../Components/resusable_icon_button.dart';
 
 class MoreOptionsScreen extends StatelessWidget {
   const MoreOptionsScreen({Key? key}) : super(key: key);
@@ -31,24 +34,24 @@ class MoreOptionsScreen extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                ReusableElevatedButton(
+                ReusableIconButton(
                     buttonColor: const Color(0xFF2B5865),
                     label: 'Google',
-                    onPressed: () {}),
+                    onPressed: () {}, icon: FontAwesomeIcons.google,),
                 const SizedBox(
                   height: 20,
                 ),
-                ReusableElevatedButton(
+                ReusableIconButton(
                     buttonColor: const Color(0xFF2B5865),
                     label: 'Facebook',
-                    onPressed: () {}),
+                    onPressed: () {}, icon: FontAwesomeIcons.facebookF,),
                 const SizedBox(
                   height: 20,
                 ),
-                ReusableElevatedButton(
+                ReusableIconButton(
                     buttonColor: const Color(0xFF2B5865),
                     label: 'Weibo',
-                    onPressed: () {}),
+                    onPressed: () {}, icon: FontAwesomeIcons.weibo,),
               ],
             ),
           ),
