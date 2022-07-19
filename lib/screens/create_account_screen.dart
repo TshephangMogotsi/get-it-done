@@ -14,43 +14,16 @@ class CreateAccount extends StatefulWidget {
 
 class _CreateAccountState extends State<CreateAccount> {
   int currentStep = 0;
+  final TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Theme(
-          data: Theme.of(context).copyWith(
-              colorScheme: const ColorScheme.light(
-            primary: kPrimaryButtonColor,
-          )),
-          child: Stepper(
-            //type: StepperType.horizontal,
-            currentStep: currentStep,
-            onStepTapped: (index) {
-              setState(() {
-                currentStep = index;
-              });
-            },
-            onStepContinue: (() {
-              setState(() {
-                if (currentStep != 2) {
-                  currentStep++;
-                }
-              });
-            }),
-            onStepCancel: (() {
-              setState(() {
-                if (currentStep != 0) {
-                  currentStep--;
-                }
-              });
-            }),
-            steps: stepList(),
-          ),
-        ),
-      ),
-    );
+  void initState() {
+    super.initState();
   }
 
   List<Step> stepList() => [
@@ -61,11 +34,11 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           content: Center(
             child: Column(
-              children: const [
+              children:  [
                 ReusableTextFormField(
                   label: 'Cell Phone',
                   hint: 'Enter Your Mobile number',
-                  type: TextInputType.phone,
+                  type: TextInputType.phone, controller: _mobileController,
                 ),
               ],
             ),
@@ -80,16 +53,16 @@ class _CreateAccountState extends State<CreateAccount> {
           content: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 ReusableTextFormField(
                   label: 'Full Name',
                   hint: 'Enter Your Full Name',
-                  type: TextInputType.name,
+                  type: TextInputType.name, controller: _fullNameController,
                 ),
                 ReusableTextFormField(
                   label: 'Email Address',
                   hint: 'Enter Email Address',
-                  type: TextInputType.emailAddress,
+                  type: TextInputType.emailAddress, controller: _emailController,
                 ),
               ],
             ),
@@ -103,18 +76,18 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           content: Center(
             child: Column(
-              children: const [
+              children:  [
                 ReusableTextFormField(
                   obscure: true,
                   label: 'Password',
                   hint: 'Enter Password',
-                  type: TextInputType.visiblePassword,
+                  type: TextInputType.visiblePassword, controller: _passwordController,
                 ),
                 ReusableTextFormField(
                   obscure: true,
                   label: 'Confirm Password',
                   hint: 'Re-Enter Password',
-                  type: TextInputType.emailAddress,
+                  type: TextInputType.emailAddress, controller: _confirmPasswordController,
                 ),
               ],
             ),
@@ -122,4 +95,52 @@ class _CreateAccountState extends State<CreateAccount> {
           isActive: currentStep >= 2,
         ),
       ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Theme(
+          data: Theme.of(context).copyWith(
+              colorScheme: const ColorScheme.light(
+            primary: kPrimaryButtonColor,
+          )),
+          child: Form(
+            key: _formKey,
+            child: Stepper(
+              //type: StepperType.horizontal,
+              currentStep: currentStep,
+              onStepTapped: (index) {
+                setState(() {
+                  currentStep = index;
+                });
+              },
+              onStepContinue: (() {
+                setState(() {
+                  if (currentStep != 2) {
+                    currentStep++;
+                  }
+                });
+              }),
+              onStepCancel: (() {
+                setState(() {
+                  if (currentStep != 0) {
+                    currentStep--;
+                  }
+                });
+              }),
+              steps: stepList(),
+            ),
+          ),
+        ),
+      ),
+    );
+    
+  }
+
+  Future signIn()async{
+    
+  }
+
+  
 }
