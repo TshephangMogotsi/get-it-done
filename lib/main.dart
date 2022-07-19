@@ -12,7 +12,7 @@ class GetItDone extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: KprimaryButtonColor,
+        primaryColor: kPrimaryButtonColor,
         scaffoldBackgroundColor: const Color(0xFFFFFFFF),
       ),
       home: const WelcomeScreen(),

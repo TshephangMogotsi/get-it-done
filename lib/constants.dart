@@ -6,5 +6,5 @@ const TextStyle kButtonTextStyle =
 const TextStyle kTestTextStyle =
     TextStyle(color: Colors.black);
 
-const Color KprimaryButtonColor = Color(0xFFFFA600);
+const Color kPrimaryButtonColor = Color(0xFFFFA600);
 

@@ -74,13 +74,13 @@ class WelcomeScreen extends StatelessWidget {
                       ),
 
                       ReusableElevatedButton(
-                          buttonColor: KprimaryButtonColor,
+                          buttonColor: kPrimaryButtonColor,
                           label: 'Create account',
                           onPressed: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => CreateAccount()));
+                                    builder: (_) => const CreateAccount()));
                           }),
                       const SizedBox(
                         height: 10,

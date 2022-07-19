@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../Components/reusable_textformfield.dart';
 import '../constants.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -14,55 +15,111 @@ class CreateAccount extends StatefulWidget {
 class _CreateAccountState extends State<CreateAccount> {
   int currentStep = 0;
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Theme(
+          data: Theme.of(context).copyWith(
+              colorScheme: const ColorScheme.light(
+            primary: kPrimaryButtonColor,
+          )),
+          child: Stepper(
+            //type: StepperType.horizontal,
+            currentStep: currentStep,
+            onStepTapped: (index) {
+              setState(() {
+                currentStep = index;
+              });
+            },
+            onStepContinue: (() {
+              setState(() {
+                if (currentStep != 2) {
+                  currentStep++;
+                }
+              });
+            }),
+            onStepCancel: (() {
+              setState(() {
+                if (currentStep != 0) {
+                  currentStep--;
+                }
+              });
+            }),
+            steps: stepList(),
+          ),
+        ),
+      ),
+    );
+  }
+
   List<Step> stepList() => [
+        Step(
+          title: Text(
+            'Mobile',
+            style: kTestTextStyle,
+          ),
+          content: Center(
+            child: Column(
+              children: const [
+                ReusableTextFormField(
+                  label: 'Cell Phone',
+                  hint: 'Enter Your Mobile number',
+                  type: TextInputType.name,
+                ),
+              ],
+            ),
+          ),
+          isActive: currentStep >= 0,
+        ),
         Step(
           title: Text(
             'Account',
             style: kTestTextStyle,
           ),
           content: Center(
-            child: Text('data'),
-          ),
-          isActive: currentStep >= 0,
-        ),
-        Step(
-          title: Text(
-            'Address',
-            style: kTestTextStyle,
-          ),
-          content: Center(
-            child: Text('data'),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                ReusableTextFormField(
+                  label: 'Full Name',
+                  hint: 'Enter Your Full Name',
+                  type: TextInputType.name,
+                ),
+                ReusableTextFormField(
+                  label: 'Email Address',
+                  hint: 'Enter Email Address',
+                  type: TextInputType.emailAddress,
+                ),
+              ],
+            ),
           ),
           isActive: currentStep >= 1,
         ),
         Step(
           title: Text(
-            'Confirm',
+            'Password',
             style: kTestTextStyle,
           ),
           content: Center(
-            child: Text('data'),
+            child: Column(
+              children: const [
+                ReusableTextFormField(
+                  obscure: true,
+                  label: 'Password',
+                  hint: 'Enter Password',
+                  type: TextInputType.visiblePassword,
+                ),
+                ReusableTextFormField(
+                  obscure: true,
+                  label: 'Confirm Password',
+                  hint: 'Re-Enter Password',
+                  type: TextInputType.emailAddress,
+                ),
+              ],
+            ),
           ),
           isActive: currentStep >= 2,
         ),
       ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Stepper(
-          // type: StepperType.horizontal,
-          currentStep: currentStep,
-          onStepTapped: (index) {
-            setState(() {
-              currentStep = index;
-            });
-          },
-
-          steps: stepList(),
-        ),
-      ),
-    );
-  }
 }
