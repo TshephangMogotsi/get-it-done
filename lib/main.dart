@@ -1,9 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it_done/screens/welcome_screen.dart';
 
 import 'constants.dart';
 
-void main() => runApp(const GetItDone());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp();
+  runApp(const GetItDone());
+}
 
 class GetItDone extends StatelessWidget {
   const GetItDone({Key? key}) : super(key: key);
@@ -19,3 +25,4 @@ class GetItDone extends StatelessWidget {
     );
   }
 }
+

@@ -18,7 +18,8 @@ class _CreateAccountState extends State<CreateAccount> {
   final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -34,11 +35,12 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           content: Center(
             child: Column(
-              children:  [
+              children: [
                 ReusableTextFormField(
                   label: 'Cell Phone',
                   hint: 'Enter Your Mobile number',
-                  type: TextInputType.phone, controller: _mobileController,
+                  type: TextInputType.phone,
+                  controller: _mobileController,
                 ),
               ],
             ),
@@ -53,16 +55,18 @@ class _CreateAccountState extends State<CreateAccount> {
           content: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children:  [
+              children: [
                 ReusableTextFormField(
                   label: 'Full Name',
                   hint: 'Enter Your Full Name',
-                  type: TextInputType.name, controller: _fullNameController,
+                  type: TextInputType.name,
+                  controller: _fullNameController,
                 ),
                 ReusableTextFormField(
                   label: 'Email Address',
                   hint: 'Enter Email Address',
-                  type: TextInputType.emailAddress, controller: _emailController,
+                  type: TextInputType.emailAddress,
+                  controller: _emailController,
                 ),
               ],
             ),
@@ -76,18 +80,20 @@ class _CreateAccountState extends State<CreateAccount> {
           ),
           content: Center(
             child: Column(
-              children:  [
+              children: [
                 ReusableTextFormField(
                   obscure: true,
                   label: 'Password',
                   hint: 'Enter Password',
-                  type: TextInputType.visiblePassword, controller: _passwordController,
+                  type: TextInputType.visiblePassword,
+                  controller: _passwordController,
                 ),
                 ReusableTextFormField(
                   obscure: true,
                   label: 'Confirm Password',
                   hint: 'Re-Enter Password',
-                  type: TextInputType.emailAddress, controller: _confirmPasswordController,
+                  type: TextInputType.emailAddress,
+                  controller: _confirmPasswordController,
                 ),
               ],
             ),
@@ -135,10 +141,5 @@ class _CreateAccountState extends State<CreateAccount> {
         ),
       ),
     );
-    
   }
-
- 
-
-  
 }
