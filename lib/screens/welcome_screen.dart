@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_it_done/Components/reusable_button.dart';
-import 'package:get_it_done/screens/create_account_screen.dart';
-import 'package:get_it_done/screens/login.dart';
 import '../Components/background_circles.dart';
 import '../Components/resusable_icon_button.dart';
 import '../constants.dart';
-import 'more_options_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -32,10 +29,7 @@ class WelcomeScreen extends StatelessWidget {
                       children: [
                         InkWell(
                           onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const Login()));
+                            Navigator.pushNamed(context, '/login');
                           },
                           child: const Text(
                             'Log in',
@@ -74,14 +68,12 @@ class WelcomeScreen extends StatelessWidget {
                       ),
 
                       ReusableElevatedButton(
-                          buttonColor: kPrimaryButtonColor,
-                          label: 'Create account',
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => const CreateAccount()));
-                          }),
+                        buttonColor: kPrimaryButtonColor,
+                        label: 'Create account',
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/createAccount');
+                        },
+                      ),
                       const SizedBox(
                         height: 10,
                       ),
@@ -96,10 +88,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => const MoreOptionsScreen()));
+                          Navigator.pushNamed(context, '/moreOptions');
                         },
                         child: const Text(
                           'More options',
