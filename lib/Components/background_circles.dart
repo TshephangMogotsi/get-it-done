@@ -30,3 +30,21 @@ class BottomBackgroundCircle extends StatelessWidget {
     );
   }
 }
+
+class HomePageBackgroundCircle extends StatelessWidget {
+  const HomePageBackgroundCircle({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      child: Opacity(
+        opacity: 0.3,
+        child: SvgPicture.asset(
+          'assets/MainCircle.svg',
+          
+        ),
+        
+      ),
+    );
+  }
+}
