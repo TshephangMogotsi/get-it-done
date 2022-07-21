@@ -109,7 +109,7 @@ class _CreateAccountState extends State<CreateAccount> {
         child: Theme(
           data: Theme.of(context).copyWith(
               colorScheme: const ColorScheme.light(
-            primary: kPrimaryColor,
+            primary: kPrimaryColorYellow,
           )),
           child: Form(
             key: _formKey,

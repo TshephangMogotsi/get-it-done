@@ -22,7 +22,7 @@ class GetItDone extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primaryColor: kPrimaryColor,
+        primaryColor: kPrimaryColorYellow,
         scaffoldBackgroundColor: const Color(0xFFFFFFFF),
       ),
       initialRoute: '/',

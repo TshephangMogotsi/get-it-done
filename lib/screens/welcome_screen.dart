@@ -68,7 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
 
                       ReusableElevatedButton(
-                        buttonColor: kPrimaryColor,
+                        buttonColor: kPrimaryColorYellow,
                         label: 'Create account',
                         onPressed: () {
                           Navigator.pushNamed(context, '/createAccount');

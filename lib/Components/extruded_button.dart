@@ -23,7 +23,7 @@ class ExtrudedButton extends StatelessWidget {
             Container(
                 padding: const EdgeInsets.fromLTRB(20.0, 5.0, 0.0, 5.0),
                 decoration: BoxDecoration(
-                  color: kPrimaryColor,
+                  color: kPrimaryColorYellow,
                   borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     bottomLeft: Radius.circular(20),

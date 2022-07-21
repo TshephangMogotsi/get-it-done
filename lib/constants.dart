@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
 //colors
-const Color kPrimaryColor = Color(0xFFFFA600);
+const Color kPrimaryColorYellow = Color(0xFFFFA600);
+const Color kAccentBColorlue = Color(0xFF073E54);
 
 const TextStyle kReusableCircleContainerTextStyle = TextStyle(fontSize: 10,fontWeight: FontWeight.w600, color:Color(0xFF073E54));
 const TextStyle kReusableCircleContainerTextStyle2 = TextStyle(fontSize: 10,fontWeight: FontWeight.w600, color:Color(0xFFFFA600));
 
 const TextStyle kTextAccentBlue = TextStyle(color:Color(0xFF073E54));
-const Color kAccentBlue = Color(0xFF073E54);
 
 const TextStyle kButtonTextStyle =
     TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.w300);
