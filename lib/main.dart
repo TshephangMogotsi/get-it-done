@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it_done/screens/home_page.dart';
-import 'package:get_it_done/screens/welcome_screen.dart';
 
 import 'constants.dart';
+import 'screens/home_page.dart';
+import 'screens/welcome_screen.dart';
 import 'screens/create_account_screen.dart';
 import 'screens/login.dart';
 import 'screens/more_options_screen.dart';
+import 'screens/task_screens/dashboard.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,6 +33,7 @@ class GetItDone extends StatelessWidget {
         '/createAccount': (context) => const CreateAccount(),
         '/moreOptions': (context) => const MoreOptionsScreen(),
         '/homePage': (context) => const HomePage(),
+        '/taskDashboard': (context) => const Dashboard(),
       },
     );
   }
