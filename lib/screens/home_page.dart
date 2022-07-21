@@ -48,11 +48,11 @@ class HomePage extends StatelessWidget {
                           },
                         ),
                         ReusableCircleContainer(
-                          color: kAccentBColorlue,
+                          color: kAccentColorBlue,
                           icon: Icons.map_outlined,
                           label: 'FIND TASK',
                           style: kReusableCircleContainerTextStyle,
-                          borderColor: kAccentBColorlue,
+                          borderColor: kAccentColorBlue,
                           onPressed: () {},
                         ),
                       ],
@@ -61,11 +61,11 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         ReusableCircleContainer(
-                          color: kAccentBColorlue,
+                          color: kAccentColorBlue,
                           icon: Icons.credit_card_outlined,
                           label: 'FUND',
                           style: kReusableCircleContainerTextStyle,
-                          borderColor: kAccentBColorlue,
+                          borderColor: kAccentColorBlue,
                           onPressed: () {},
                         ),
                         ReusableCircleContainer(

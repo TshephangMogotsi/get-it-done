@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get_it_done/constants.dart';
 
-class ReusableIconButton extends StatelessWidget {
-  const ReusableIconButton({
+class ReusableUnifiedButton extends StatelessWidget {
+  const ReusableUnifiedButton({
     Key? key,
     required this.buttonColor,
     required this.label,
+    required this.label2,
     required this.onPressed,
-    required this.icon,
   }) : super(key: key);
 
   final Color buttonColor;
   final String label;
+  final String label2;
   final VoidCallback onPressed;
-  final IconData icon;
 
   @override
   Widget build(BuildContext context) {
@@ -22,31 +22,25 @@ class ReusableIconButton extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: buttonColor,
+          border: Border.all(
+            width: 2.0,
+            color: kAccentColorBlue,
+          ),
           borderRadius: const BorderRadius.all(
             Radius.circular(5.0),
           ),
         ),
         height: 50.0,
-        width: 280.0,
+        width: double.infinity,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Expanded(
-                flex: 1,
-                child: Icon(
-                  icon,
-                  color: Colors.white,
-                )),
+            Expanded(child: Center(child: Text(label, style: kUnifiedButtonTextStyle))),
             const VerticalDivider(
               thickness: 2.0,
-              color: Colors.white,
+              color: kAccentColorBlue,
             ),
-            Expanded(
-              flex: 3,
-              child: Center(
-                child: Text(label, style: kButtonTextStyle),
-              ),
-            ),
+            Expanded(child: Center(child: Text(label2, style: kUnifiedButtonTextStyle))),
           ],
         ),
       ),

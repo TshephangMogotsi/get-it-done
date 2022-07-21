@@ -36,15 +36,13 @@ class HomePageBackgroundCircle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      child: Opacity(
-        opacity: 0.3,
-        child: SvgPicture.asset(
-          'assets/MainCircle.svg',
-          
-        ),
+    return Opacity(
+      opacity: 0.3,
+      child: SvgPicture.asset(
+        'assets/MainCircle.svg',
         
       ),
+      
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'constants.dart';
 import 'screens/home_page.dart';
+import 'screens/task_screens/task.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/create_account_screen.dart';
 import 'screens/login.dart';
@@ -24,6 +25,9 @@ class GetItDone extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         primaryColor: kPrimaryColorYellow,
+        appBarTheme: const AppBarTheme(
+          color: kAccentColorBlue,
+        ),
         scaffoldBackgroundColor: const Color(0xFFFFFFFF),
       ),
       initialRoute: '/',
@@ -34,6 +38,7 @@ class GetItDone extends StatelessWidget {
         '/moreOptions': (context) => const MoreOptionsScreen(),
         '/homePage': (context) => const HomePage(),
         '/taskDashboard': (context) => const Dashboard(),
+        '/task': (context) =>  const Task(),
       },
     );
   }

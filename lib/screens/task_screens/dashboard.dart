@@ -16,8 +16,15 @@ class Dashboard extends StatelessWidget {
             clipper:
                 CustomShape(), // this is my own class which extendsCustomClipper
             child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: const AssetImage("assets/office_couch.jpg"),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.2), BlendMode.darken),
+                ),
+              ),
               height: 300,
-              color: kPrimaryColorYellow,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
@@ -25,12 +32,15 @@ class Dashboard extends StatelessWidget {
                     lenghtAndWidth: 100.0,
                   ),
                   SizedBox(height: 10.0),
-                  Text('Tshephang Mogotsi')
+                  Text('Tshephang Mogotsi', style: kButtonTextStyle2)
                 ],
               ),
             ),
           ),
-          const Text('What do you need done today?'),
+          const Text(
+            'What do you need done today?',
+            style: kHomePageWidgetTextStyle,
+          ),
           Expanded(
             child: GridView.count(
               padding:
@@ -41,13 +51,17 @@ class Dashboard extends StatelessWidget {
               children: [
                 ReusableGridTaskTile(
                   label: 'Deliveries',
-                  icon: Icons.bus_alert,
-                  onPressed: () {},
+                  icon: Icons.directions_car_outlined,
+                  onPressed: () {
+                  
+                  },
                 ),
                 ReusableGridTaskTile(
                   label: 'Moving',
-                  icon: Icons.bus_alert,
-                  onPressed: () {},
+                  icon: Icons.local_shipping_outlined,
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/task');
+                  },
                 ),
                 ReusableGridTaskTile(
                   label: 'Tutoring',
@@ -55,33 +69,33 @@ class Dashboard extends StatelessWidget {
                   onPressed: () {},
                 ),
                 ReusableGridTaskTile(
-                  label: 'Deliveries',
-                  icon: Icons.bus_alert,
+                  label: 'Gardening',
+                  icon: Icons.forest_outlined,
                   onPressed: () {},
                 ),
                 ReusableGridTaskTile(
-                  label: 'Moving',
-                  icon: Icons.bus_alert,
+                  label: 'Cleaning',
+                  icon: Icons.cleaning_services_outlined,
                   onPressed: () {},
                 ),
                 ReusableGridTaskTile(
-                  label: 'Tutoring',
-                  icon: Icons.bus_alert,
+                  label: 'babysitting',
+                  icon: Icons.child_care_outlined,
                   onPressed: () {},
                 ),
                 ReusableGridTaskTile(
-                  label: 'Deliveries',
-                  icon: Icons.bus_alert,
+                  label: 'Installations',
+                  icon: Icons.handyman_outlined,
                   onPressed: () {},
                 ),
                 ReusableGridTaskTile(
-                  label: 'Moving',
-                  icon: Icons.bus_alert,
+                  label: 'Casual Workers',
+                  icon: Icons.hail_outlined,
                   onPressed: () {},
                 ),
                 ReusableGridTaskTile(
-                  label: 'Tutoring',
-                  icon: Icons.bus_alert,
+                  label: 'Other',
+                  icon: Icons.add,
                   onPressed: () {},
                 ),
               ],
