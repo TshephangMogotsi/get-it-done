@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+//colors
+const Color kPrimaryColor = Color(0xFFFFA600);
+
 const TextStyle kReusableCircleContainerTextStyle = TextStyle(fontSize: 10,fontWeight: FontWeight.w600, color:Color(0xFF073E54));
 const TextStyle kReusableCircleContainerTextStyle2 = TextStyle(fontSize: 10,fontWeight: FontWeight.w600, color:Color(0xFFFFA600));
 
@@ -15,5 +18,5 @@ const TextStyle kHomePageWidgetTextStyle =
 const TextStyle kTestTextStyle =
     TextStyle(color: Colors.black);
 
-const Color kPrimaryButtonColor = Color(0xFFFFA600);
+
 

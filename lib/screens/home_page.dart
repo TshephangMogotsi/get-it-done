@@ -61,11 +61,11 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: const [
                         ReusableCircleContainer(
-                          color: kPrimaryButtonColor,
+                          color: kPrimaryColor,
                           icon: Icons.description_outlined,
                           label: 'POST TASK',
                           style: kReusableCircleContainerTextStyle2,
-                          borderColor: kPrimaryButtonColor,
+                          borderColor: kPrimaryColor,
                         ),
                         ReusableCircleContainer(
                           color: kAccentBlue,
@@ -87,11 +87,11 @@ class HomePage extends StatelessWidget {
                           borderColor: kAccentBlue,
                         ),
                         ReusableCircleContainer(
-                          color: kPrimaryButtonColor,
+                          color: kPrimaryColor,
                           icon: Icons.forum_outlined,
                           label: 'INBOX',
                           style: kReusableCircleContainerTextStyle2,
-                          borderColor: kPrimaryButtonColor,
+                          borderColor: kPrimaryColor,
                         ),
                       ],
                     ),
