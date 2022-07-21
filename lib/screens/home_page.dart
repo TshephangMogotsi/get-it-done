@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../Components/background_circles.dart';
 import '../Components/extruded_button.dart';
+import '../Components/reusable_avatar.dart';
 import '../Components/reusable_circle_container.dart';
 import '../Components/weather_card.dart';
 import '../constants.dart';
@@ -25,31 +26,7 @@ class HomePage extends StatelessWidget {
             const Center(
               child: HomePageBackgroundCircle(),
             ),
-            Center(
-              child: Container(
-                width: 150.0,
-                height: 150.0,
-                decoration: BoxDecoration(
-                  //color: const Color(0xff7c94b6),
-                  image: const DecorationImage(
-                    image: AssetImage('assets/pug_portrait.jpg'),
-                    fit: BoxFit.cover,
-                  ),
-                  borderRadius: const BorderRadius.all(Radius.circular(150.0)),
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 4.0,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 4,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            const ReusableAvatar(lenghtAndWidth: 150.0,),
             Center(
               child: SizedBox(
                 height: 330,
@@ -59,13 +36,16 @@ class HomePage extends StatelessWidget {
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         ReusableCircleContainer(
                           color: kPrimaryColorYellow,
                           icon: Icons.description_outlined,
                           label: 'POST TASK',
                           style: kReusableCircleContainerTextStyle2,
                           borderColor: kPrimaryColorYellow,
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/taskDashboard');
+                          },
                         ),
                         ReusableCircleContainer(
                           color: kAccentBColorlue,
@@ -73,18 +53,20 @@ class HomePage extends StatelessWidget {
                           label: 'FIND TASK',
                           style: kReusableCircleContainerTextStyle,
                           borderColor: kAccentBColorlue,
+                          onPressed: () {},
                         ),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         ReusableCircleContainer(
                           color: kAccentBColorlue,
                           icon: Icons.credit_card_outlined,
                           label: 'FUND',
                           style: kReusableCircleContainerTextStyle,
                           borderColor: kAccentBColorlue,
+                          onPressed: () {},
                         ),
                         ReusableCircleContainer(
                           color: kPrimaryColorYellow,
@@ -92,6 +74,7 @@ class HomePage extends StatelessWidget {
                           label: 'INBOX',
                           style: kReusableCircleContainerTextStyle2,
                           borderColor: kPrimaryColorYellow,
+                          onPressed: () {},
                         ),
                       ],
                     ),

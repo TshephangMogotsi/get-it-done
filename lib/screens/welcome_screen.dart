@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get_it_done/Components/reusable_button.dart';
 import '../Components/background_circles.dart';
-import '../Components/resusable_icon_button.dart';
+import '../Components/reusable_icon_button.dart';
 import '../constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
