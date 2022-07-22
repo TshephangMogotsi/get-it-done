@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'screens/home_page.dart';
 import 'screens/task_screens/task.dart';
+import 'screens/task_screens/task_summary.dart';
 import 'screens/welcome_screen.dart';
 import 'screens/create_account_screen.dart';
 import 'screens/login.dart';
@@ -39,6 +40,8 @@ class GetItDone extends StatelessWidget {
         '/homePage': (context) => const HomePage(),
         '/taskDashboard': (context) => const Dashboard(),
         '/task': (context) =>  const Task(),
+        '/taskSummary': (context) => const TaskSummary(),
+
       },
     );
   }

@@ -80,7 +80,9 @@ class _TaskState extends State<Task> {
               ReusableElevatedButton(
                 buttonColor: kPrimaryColorYellow,
                 label: 'Post Task',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/taskSummary');
+                },
               )
             ],
           ),
