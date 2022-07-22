@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get_it_done/constants.dart';
 
-class ReusableUnifiedButton extends StatelessWidget {
-  const ReusableUnifiedButton({
+class ReusableTopFlatButton extends StatelessWidget {
+  const ReusableTopFlatButton({
     Key? key,
     required this.buttonColor,
     required this.label,
-    required this.label2,
     required this.onPressed,
   }) : super(key: key);
 
   final Color buttonColor;
   final String label;
-  final String label2;
   final VoidCallback onPressed;
 
   @override
@@ -26,21 +24,27 @@ class ReusableUnifiedButton extends StatelessWidget {
             width: 2.0,
             color: kAccentColorBlue,
           ),
-          borderRadius: const BorderRadius.all(
-            Radius.circular(5.0),
+          borderRadius: const BorderRadius.only(
+            bottomRight: Radius.circular(5),
+            bottomLeft: Radius.circular(5),
           ),
         ),
         height: 50.0,
         width: double.infinity,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Expanded(child: Center(child: Text(label, style: kUnifiedButtonTextStyle))),
-            const VerticalDivider(
-              thickness: 2.0,
-              color: kAccentColorBlue,
+            const SizedBox(
+              width: 10.0,
             ),
-            Expanded(child: Center(child: Text(label2, style: kUnifiedButtonTextStyle))),
+            const Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            const SizedBox(
+              width: 10.0,
+            ),
+            Text(label, style: const TextStyle(color: Colors.white)),
           ],
         ),
       ),

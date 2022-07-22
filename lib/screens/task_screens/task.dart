@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../Components/resusable_multi_line.dart';
 import '../../Components/reusable_button.dart';
+import '../../Components/reusable_top_flat_button.dart';
 import '../../Components/reusable_unified_button.dart';
 import '../../Components/reusable_icontextformfield.dart';
 import '../../constants.dart';
@@ -32,16 +33,38 @@ class _TaskState extends State<Task> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ReusableIconTextFormField(
-                controller: taskController,
-                type: TextInputType.name,
-                icon: Icons.mic,
-                hint: 'Task Title e.g. Moving houses',
+              Row(
+                children: [
+                  Flexible(
+                    child: ReusableIconTextFormField(
+                      controller: taskController,
+                      type: TextInputType.name,
+                      icon: Icons.mic,
+                      hint: 'Task Title e.g. Moving houses',
+                    ),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(bottom: 20.0, left: 20.0),
+                    child: Icon(
+                      Icons.calendar_month,
+                      color: kPrimaryColorYellow,
+                    ),
+                  )
+                ],
               ),
-              ReusableMultiLineField(
-                controller: taskDescriptionController,
-                label: '',
-                hint: '',
+              Column(
+                children: [
+                  ReusableMultiLineField(
+                    controller: taskDescriptionController,
+                    label: '',
+                    hint: '',
+                  ),
+                  ReusableTopFlatButton(
+                    buttonColor: kAccentColorBlue,
+                    label: 'Add Photo',
+                    onPressed: () {},
+                  ),
+                ],
               ),
               ReusableIconTextFormField(
                   controller: tasklocationController,

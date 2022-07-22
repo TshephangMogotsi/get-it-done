@@ -24,10 +24,14 @@ class ReusableMultiLineField extends StatelessWidget {
           controller: controller,
           obscureText: obscure == null ? false : true,
           decoration: InputDecoration(
-              hintText: hint, border: const OutlineInputBorder()),
-        ),
-        const SizedBox(
-          height: 15.0,
+            border: const OutlineInputBorder(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(5),
+                topRight: Radius.circular(5),
+              ),
+            ),
+            hintText: hint,
+          ),
         ),
       ],
     );
